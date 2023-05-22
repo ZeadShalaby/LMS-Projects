@@ -1,0 +1,36 @@
+<br><br>
+<div class="container w-50 border-3 shadow p-3 mb-5 bg-white rounded">
+    <h2 class="text-center text-capitalize">Edit " {{editSub.name}} " Subject</h2>
+    <form action="/admin/subjects/{{editSub._id}}?_method=PUT" method="post" class="my-5 text-capitalize">
+        <div class="mb-5">
+            <label for="subjectName" class="form-label">subject Name</label>
+            <input type="text" class="form-control" id="subjectName" required name="name" value="{{editSub.name}}">
+        </div>
+        <div class="mb-5">
+            <label for="subjectCode" class="form-label">subject Code</label>
+            <input type="text" class="form-control" id="subjectCode" required maxlength="6" name="code"
+                value="{{editSub.code}}">
+        </div>
+        <div class="mb-5">
+            <label for="previousSubject" class="form-label">previous Subject</label>
+            {{!-- <input type="text" class="form-control" id="previousSubject" name="previous_subject"
+                value="{{editSub.previous_subject}}"> --}}
+            <select name="previous_subject" id="previousSubject" class="form-select">
+                <option value=""></option>
+                {{#each subjects}}
+                <option value="{{name}}">{{name}}</option>
+                {{/each}}
+            </select>
+        </div>
+        <div class="mb-5">
+            <label for="subjetDepartment" class="form-label">subject department</label>
+            <select name="department" id="subjetDepartment" class="form-select">
+                {{#each departments}}
+                <option value={{_id}}>{{name}}</option>
+                {{/each}}
+            </select>
+        </div>
+        <button type="submit" class="btn btn-success">Edit</button>
+        <a href="/admin/subjects" class="btn btn-danger">Cancel</a>
+    </form>
+</div>

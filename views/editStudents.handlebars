@@ -1,0 +1,39 @@
+<br><br>
+<div class="container w-50 border-3 shadow p-3 mb-5 bg-white rounded">
+    <h2 class="text-center text-capitalize">Edit student " {{editStudent.first_name}} {{editStudent.last_name}} "</h2>
+    <form action="/admin/students/{{editStudent._id}}?_method=PUT" method="post" class="my-5 text-capitalize">
+        <div class="mb-5 d-flex">
+            <label for="firstName" class="form-label w-25">first Name</label>
+            <input type="text" class="form-control w-50 me-3" id="firstName" name="first_name" required
+                value="{{editStudent.first_name}}">
+            <label for="lastName" class="form-label w-25 ms-5">last Name</label>
+            <input type="text" class="form-control w-50" id="lastName" name="last_name" required
+                value="{{editStudent.last_name}}">
+        </div>
+        <div class="mb-5">
+            <label for="username" class="form-label">username</label>
+            <input type="text" class="form-control" id="username" name="username" required
+                value="{{editStudent.username}}">
+        </div>
+        <div class="mb-5">
+            <label for="password" class="form-label">password</label>
+            <input type="password" class="form-control" id="password" name="password" required
+                value="{{editStudent.password}}">
+        </div>
+        <div class="mb-5">
+            <label for="academicNumber" class="form-label">academic number</label>
+            <input type="text" class="form-control" id="academicNumber" name="academic_number" required
+                value="{{editStudent.academic_number}}">
+        </div>
+        <div class="mb-5">
+            <label for="department" class="form-label">department</label>
+            <select name="department" id="department" class="form-select">
+                {{#each departments}}
+                <option value={{_id}}>{{name}}</option>
+                {{/each}}
+            </select>
+        </div>
+        <button type="submit" class="btn btn-success">Edit</button>
+        <a href="/admin/students" class="btn btn-danger">Cancel</a>
+    </form>
+</div>

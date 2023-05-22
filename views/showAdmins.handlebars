@@ -1,0 +1,39 @@
+<br><br>
+<div class="container shadow rounded">
+    <table class="table table-hover text-center mx-auto ">
+        <thead>
+            <tr class="table-secondary">
+                <th scope="col">#</th>
+                <th scope="col">Name</th>
+                <th scope="col">Username</th>
+                {{!-- <th scope="col">Password</th> --}}
+                <th scope="col"></th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each admins}}
+            <tr>
+                <th scope="row">#</th>
+                <td>{{first_name}} {{last_name}}</td>
+                <td>{{username}}</td>
+                {{!-- <td>{{password}}</td> --}}
+                <td>
+                    <a class="link-success" title="edit" href="/admin/admins/{{_id}}/edit">
+                        <li class="fa-solid fa-pencil fs-5"></li>
+                    </a>
+                </td>
+                <td>
+                    <form onsubmit="return confirm('Are you sure you want to delete this admin')"
+                        action="/admin/admins/{{_id}}?_method=DELETE" method="post">
+                        <button class="border-0 bg-transparent text-danger" title="delete">
+                            <li class="fa-regular fa-trash-can fs-5"></li>
+                        </button>
+                    </form>
+                </td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+</div>
+<br><br><br><br><br><br><br><br><br><br><br>

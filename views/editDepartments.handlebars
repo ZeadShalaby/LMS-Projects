@@ -1,0 +1,18 @@
+<br><br><br><br>
+<div class="container w-50 border-3 shadow p-3 mb-5 bg-white rounded">
+    <h2 class="text-center text-capitalize">Edit " {{editDept.name}} " Department</h2>
+    <form action="/admin/departments/{{editDept._id}}?_method=PUT" method="post" class="my-5">
+        <div class="mb-5 text-capitalize">
+            <label for="deptName" class="form-label">Department Name</label>
+            <input type="text" class="form-control" id="deptName" required name="name" value="{{editDept.name}}">
+        </div>
+        <div class="mb-5">
+            <label for="deptCode" class="form-label">Department Code</label>
+            <input type="text" class="form-control" id="deptCode" required maxlength="6" name="code"
+                value="{{editDept.code}}">
+        </div>
+        <button type="submit" class="btn btn-success">Edit</button>
+        <a href="/admin/departments" class="btn btn-danger">Cancel</a>
+    </form>
+</div>
+<br><br>

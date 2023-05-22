@@ -1,0 +1,50 @@
+<br><br><br><br>
+<div class="container w-50 border-3 shadow p-3 mb-5 bg-white rounded">
+    <h2 class="text-center text-capitalize">Edit staff " {{editStaff.first_name}} {{editStaff.last_name}} "</h2>
+    <form action="/admin/staffs/{{editStaff._id}}?_method=PUT" method="post" class="my-5 text-capitalize">
+        <div class="mb-5 d-flex">
+            <label for="firstName" class="form-label w-25">first Name</label>
+            <input type="text" class="form-control w-50 me-3" id="firstName" name="first_name" required
+                value="{{editStaff.first_name}}">
+            <label for="lastName" class="form-label w-25 ms-5">last Name</label>
+            <input type="text" class="form-control w-50" id="lastName" name="last_name" required
+                value="{{editStaff.last_name}}">
+        </div>
+        <div class="mb-5">
+            <label for="username" class="form-label">username</label>
+            <input type="text" class="form-control" id="username" name="username" required
+                value="{{editStaff.username}}">
+        </div>
+        <div class="mb-5">
+            <label for="password" class="form-label">password</label>
+            <input type="password" class="form-control" id="password" name="password" required
+                value="{{editStaff.password}}">
+        </div>
+        <div class="mb-5">
+            <label for="subject1" class="form-label">subject 1</label>
+            <select name="subject1" id="subject1" class="form-select">
+                {{#each subjects}}
+                <option value={{_id}}>{{name}}</option>
+                {{/each}}
+            </select>
+        </div>
+        <div class="mb-5">
+            <label for="subject2" class="form-label">subject 2</label>
+            <select name="subject2" id="subject2" class="form-select">
+                {{#each subjects}}
+                <option value={{_id}}>{{name}}</option>
+                {{/each}}
+            </select>
+        </div>
+        <div class="mb-5">
+            <label for="subject3" class="form-label">subject 3</label>
+            <select name="subject3" id="subject3" class="form-select">
+                {{#each subjects}}
+                <option value={{_id}}>{{name}}</option>
+                {{/each}}
+            </select>
+        </div>
+        <button type="submit" class="btn btn-success">Edit</button>
+        <a href="/admin/staffs" class="btn btn-danger">Cancel</a>
+    </form>
+</div>

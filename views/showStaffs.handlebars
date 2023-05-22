@@ -1,0 +1,44 @@
+<br><br>
+<div class="container shadow rounded">
+    <table class="table table-hover text-center mx-auto ">
+        <thead>
+            <tr class="table-secondary">
+                <th scope="col">#</th>
+                <th scope="col">Name</th>
+                <th scope="col">Username</th>
+                <th scope="col">Subject 1</th>
+                <th scope="col">Subject 2</th>
+                <th scope="col">Subject 3</th>
+                {{!-- <th scope="col">Password</th> --}}
+                <th scope="col"></th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each staffs}}
+            <tr>
+                <th scope="row">#</th>
+                <td>{{first_name}} {{last_name}}</td>
+                <td>{{username}}</td>
+                <td>{{subject1.name}}</td>
+                <td>{{subject2.name}}</td>
+                <td>{{subject3.name}}</td>
+                {{!-- <td>{{password}}</td> --}}
+                <td>
+                    <a class="link-success" title="edit" href="/admin/staffs/{{_id}}/edit">
+                        <li class="fa-solid fa-pencil fs-5"></li>
+                    </a>
+                </td>
+                <td>
+                    <form onsubmit="return confirm('Are you sure you want to delete this staff')"
+                        action="/admin/staffs/{{_id}}?_method=DELETE" method="post">
+                        <button class="border-0 bg-transparent text-danger" title="delete">
+                            <li class="fa-regular fa-trash-can fs-5"></li>
+                        </button>
+                    </form>
+                </td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+</div>
