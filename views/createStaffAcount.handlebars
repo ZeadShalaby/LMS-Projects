@@ -16,30 +16,6 @@
             <label for="password" class="form-label">password</label>
             <input type="password" class="form-control" id="password" name="password" required>
         </div>
-        <div class="mb-5">
-            <label for="subject1" class="form-label">subject 1</label>
-            <select name="subject1" id="subject1" class="form-select">
-                {{#each subjects}}
-                <option value={{_id}}>{{name}}</option>
-                {{/each}}
-            </select>
-        </div>
-        <div class="mb-5">
-            <label for="subject2" class="form-label">subject 2</label>
-            <select name="subject2" id="subject2" class="form-select">
-                {{#each subjects}}
-                <option value={{_id}}>{{name}}</option>
-                {{/each}}
-            </select>
-        </div>
-        <div class="mb-5">
-            <label for="subject3" class="form-label">subject 3</label>
-            <select name="subject3" id="subject3" class="form-select">
-                {{#each subjects}}
-                <option value={{_id}}>{{name}}</option>
-                {{/each}}
-            </select>
-        </div>
         <button type="submit" class="btn btn-success">Create</button>
         <a href="/admin/staffs" class="btn btn-danger">Cancel</a>
     </form>
