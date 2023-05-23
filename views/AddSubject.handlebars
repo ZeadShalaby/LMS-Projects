@@ -15,7 +15,7 @@
             <select name="previous_subject" id="previousSubject" class="form-select">
                 <option value=""></option>
                 {{#each subjects}}
-                <option value={{name}}>{{name}}</option>
+                <option value="{{name}}">{{name}}</option>
                 {{/each}}
             </select>
             {{!-- <input type="text" class="form-control" id="previousSubject" name="previous_subject"> --}}
@@ -25,6 +25,14 @@
             <select name="department" id="subjetDepartment" class="form-select">
                 {{#each departments}}
                 <option value={{_id}}>{{name}}</option>
+                {{/each}}
+            </select>
+        </div>
+        <div class="mb-5">
+            <label for="staff" class="form-label">Staff</label>
+            <select name="staff" id="staff" class="form-select">
+                {{#each staffs}}
+                <option value={{_id}}>{{first_name}} {{last_name}}</option>
                 {{/each}}
             </select>
         </div>

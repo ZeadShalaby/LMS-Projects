@@ -16,7 +16,12 @@ const subject = new Schema({
         type: Schema.Types.ObjectId,
         required: true,
         ref: 'department'
-    }
+    },
+    staff: {
+        type: Schema.Types.ObjectId,
+        required: true,
+        ref: 'staff'
+    },
 });
 
 export default model('subject', subject);

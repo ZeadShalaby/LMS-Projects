@@ -30,6 +30,14 @@
                 {{/each}}
             </select>
         </div>
+        <div class="mb-5">
+            <label for="staff" class="form-label">Staff</label>
+            <select name="staff" id="staff" class="form-select">
+                {{#each staffs}}
+                <option value={{_id}}>{{first_name}} {{last_name}}</option>
+                {{/each}}
+            </select>
+        </div>
         <button type="submit" class="btn btn-success">Edit</button>
         <a href="/admin/subjects" class="btn btn-danger">Cancel</a>
     </form>

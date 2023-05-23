@@ -8,6 +8,7 @@
                 <th scope="col">Subjects</th>
                 <th scope="col">Department</th>
                 <th scope="col">previous Subject</th>
+                <th scope="col">Staff</th>
                 <th scope="col"></th>
                 <th scope="col"></th>
             </tr>
@@ -20,6 +21,7 @@
                 <td>{{name}}</td>
                 <td>{{department.name}}</td>
                 <td>{{previous_subject}}</td>
+                <td>{{staff.first_name}} {{staff.last_name}}</td>
                 <td>
                     <a class="link-success" title="edit" href="/admin/subjects/{{_id}}/edit">
                         <li class="fa-solid fa-pencil fs-5"></li>
