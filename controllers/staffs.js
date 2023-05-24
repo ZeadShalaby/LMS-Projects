@@ -1,5 +1,8 @@
 import createStaff from "../models/createStaff.js";
+import addSubject from "../models/addSubject.js";
 import bcrypt from 'bcryptjs';
+
+// systemUser Route
 
 export const savestaff = async (req, res) => {
     const { first_name, last_name, username, password } = req.body;
@@ -74,4 +77,25 @@ export const deleteStaff = async (req, res) => {
     const { _id } = req.params;
     await createStaff.findByIdAndDelete(_id);
     return res.redirect("/admin/staffs");
+}
+
+
+// staff Route
+
+export const homeStaff = async (req, res) => {
+    const subjects = await addSubject.find({ staff: req.staffUser._id }).populate('staff').lean()
+    res.render("staff",
+        {
+            subjects, title: 'Home', home: '/staff',
+            display5: 'd-none', display1: 'd-none', display2: 'd-none', display3: 'd-none', display4: 'd-none',
+        })
+}
+
+export const subjectInfo = async (req, res) => {
+    const subjects = await addSubject.find({ staff: req.staffUser._id }).populate('staff').lean()
+    res.render("subjectInfo",
+        {
+            subjects, title: 'Subject', home: '/staff',
+            display5: 'd-none', display1: 'd-none', display2: 'd-none', display3: 'd-none', display4: 'd-none',
+        })
 }

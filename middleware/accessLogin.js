@@ -15,6 +15,7 @@ export const staffAccessLogin = (req, res, next) => {
     const { staffToken } = req.cookies;
     try {
         const userInformations = Jwt.verify(staffToken, 'adrmy')
+        req.staffUser = userInformations;
         // console.log(userInformations);
         next();
     } catch (err) {

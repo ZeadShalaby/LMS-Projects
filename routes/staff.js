@@ -1,9 +1,8 @@
 import { Router } from "express";
+import { homeStaff, subjectInfo } from "../controllers/staffs.js";
 
 const router = new Router();
 
-router.get('/', (req, res) => {
-    res.render("staff", { title: 'Home', home: '/staff' })
-})
-
+router.get('/', homeStaff)
+router.get('/subjects/:_id', subjectInfo)
 export default router;

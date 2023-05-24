@@ -2,6 +2,7 @@
 import express from "express"
 import { engine } from 'express-handlebars';
 import mongoose from "mongoose";
+import multer from "multer";
 import dotenv from "dotenv";
 import methodOverride from 'method-override';
 import loginRouter from './routes/loginForm.js'

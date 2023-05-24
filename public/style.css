@@ -6,3 +6,7 @@
 .pacifico {
     font-family: 'Pacifico', cursive;
 }
+
+* {
+    box-sizing: border-box;
+}
