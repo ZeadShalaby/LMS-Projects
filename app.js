@@ -43,3 +43,9 @@ app.listen(process.env.port, () => {
     `Started the application on http://localhost:${process.env.port}`
   );
 });
+
+
+app.get("*", (req, res, next) => {
+  console.log("page not found");
+  res.render("errors/404");
+});
