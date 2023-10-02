@@ -47,5 +47,5 @@ app.listen(process.env.port, () => {
 
 app.get("*", (req, res, next) => {
   console.log("page not found");
-  res.render("errors/404");
+  return res.send("<h1>Bad Informations</h1>");
 });
